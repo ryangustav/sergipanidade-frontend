@@ -1,11 +1,17 @@
 /**
  * CARD - Cartão para estabelecimentos
- * 
+ *
  * Estilo Glassmorphism: branco, bordas arredondadas, sombra suave.
  * Use variant="glass" para versão translúcida.
  */
 
-function Card({ children, variant = 'default', className = '' }) {
+interface CardProps {
+  children: React.ReactNode
+  variant?: 'default' | 'glass'
+  className?: string
+}
+
+function Card({ children, variant = 'default', className = '' }: CardProps) {
   const cardClass = variant === 'glass' ? 'card card-glass' : 'card'
   return (
     <div className={`${cardClass} ${className}`.trim()}>

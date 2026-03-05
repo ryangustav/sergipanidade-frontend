@@ -1,10 +1,10 @@
 /**
  * COMPONENTE PRINCIPAL (RAIZ)
- * 
+ *
  * Aqui definimos a estrutura geral da aplicação:
  * - Layout (header, footer, etc)
  * - Rotas entre páginas
- * 
+ *
  * Para adicionar uma nova página: crie em /pages e adicione uma rota abaixo.
  */
 

@@ -1,6 +1,6 @@
 /**
  * CARTÃO DE ESTABELECIMENTO
- * 
+ *
  * Foco na experiência do turista:
  * - Imagem em largura quase total, cantos arredondados (8-12px)
  * - Badge discreto (Desconto/Destaque) no canto da foto
@@ -8,7 +8,15 @@
  * - Categoria em cinza claro, caixa alta
  */
 
-function EstabelecimentoCard({ nome, categoria, imagem, badge, onVerDesconto }) {
+interface EstabelecimentoCardProps {
+  nome: string
+  categoria: string
+  imagem: string
+  badge?: 'desconto' | 'destaque'
+  onVerDesconto?: () => void
+}
+
+function EstabelecimentoCard({ nome, categoria, imagem, badge, onVerDesconto }: EstabelecimentoCardProps) {
   return (
     <article className="estabelecimento-card">
       <div className="estabelecimento-card__imagem-wrapper">

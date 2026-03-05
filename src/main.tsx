@@ -1,6 +1,6 @@
 /**
  * PONTO DE ENTRADA DA APLICAÇÃO
- * 
+ *
  * Este arquivo é o primeiro a ser executado.
  * Ele "monta" o React na página HTML (div#root).
  */
@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/global.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

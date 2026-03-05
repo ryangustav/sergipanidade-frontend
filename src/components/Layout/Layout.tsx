@@ -1,18 +1,22 @@
 /**
  * LAYOUT - Estrutura que envolve todas as páginas
- * 
+ *
  * Use este componente para elementos que aparecem em todas as páginas:
  * - Cabeçalho (header)
  * - Menu de navegação
  * - Rodapé (footer)
- * 
+ *
  * O conteúdo de cada página aparece onde está {children}
  */
 
 import { Link } from 'react-router-dom'
 import logo from '@/assets/favicon.svg'
 
-function Layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode
+}
+
+function Layout({ children }: LayoutProps) {
   return (
     <div className="layout">
       <header className="layout-header">

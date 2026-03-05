@@ -1,6 +1,6 @@
 /**
  * PÁGINA INICIAL
- * 
+ *
  * Foco na experiência do turista: espaço negativo, hierarquia clara.
  */
 

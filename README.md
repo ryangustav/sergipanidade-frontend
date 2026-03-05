@@ -1,6 +1,6 @@
 # Sergipanidade - Base React
 
-Projeto React com arquitetura simples, escalável e fácil de entender.
+Projeto React + TypeScript com arquitetura simples, escalável e fácil de entender.
 
 ## 🚀 Como rodar
 
@@ -31,18 +31,18 @@ src/
 
 ### Adicionar uma nova página
 
-1. Crie o arquivo em `src/pages/MinhaPagina.jsx`:
+1. Crie o arquivo em `src/pages/MinhaPagina.tsx`:
 
-```jsx
+```tsx
 function MinhaPagina() {
   return <div><h1>Minha Página</h1></div>
 }
 export default MinhaPagina
 ```
 
-2. Adicione a rota em `src/App.jsx`:
+2. Adicione a rota em `src/App.tsx`:
 
-```jsx
+```tsx
 import MinhaPagina from './pages/MinhaPagina'
 
 // Dentro de <Routes>:
@@ -52,12 +52,12 @@ import MinhaPagina from './pages/MinhaPagina'
 ### Criar um componente reutilizável
 
 1. Crie a pasta em `src/components/ui/MeuComponente/`
-2. Crie `MeuComponente.jsx` e `index.js`
+2. Crie `MeuComponente.tsx` e `index.ts`
 3. Importe onde precisar: `import MeuComponente from '@/components/ui/MeuComponente'`
 
 ### Chamar uma API
 
-1. Crie a função em `src/services/api.js`
+1. Crie a função em `src/services/api.ts`
 2. Use no componente com `useEffect` ou em um evento
 
 ### Usar componentes shadcn/ui
@@ -81,7 +81,7 @@ import { Button } from "@/components/ui/button"
 <Button variant="destructive">Excluir</Button>
 ```
 
-Os componentes shadcn ficam em `src/components/ui/` (minúsculo: button.jsx, card.jsx). Os componentes customizados do projeto ficam em pastas com maiúscula (Button/, Card/).
+Os componentes shadcn ficam em `src/components/ui/` (minúsculo: button.tsx, card.tsx). Os componentes customizados do projeto ficam em pastas com maiúscula (Button/, Card/).
 
 ## 🛠 Scripts
 

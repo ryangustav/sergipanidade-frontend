@@ -1,9 +1,9 @@
 /**
  * HOOK useCounter - Exemplo de Custom Hook
- * 
+ *
  * Hooks em /hooks são funções que encapsulam lógica reutilizável.
  * Use quando a mesma lógica for necessária em vários componentes.
- * 
+ *
  * Regra: nomes de hooks sempre começam com "use"
  */
 

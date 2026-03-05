@@ -1,6 +1,6 @@
 /**
  * PÁGINA SOBRE
- * 
+ *
  * Acesse em: /sobre
  * Exemplo de uso dos componentes shadcn/ui
  */
