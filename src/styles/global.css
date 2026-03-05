@@ -1,0 +1,288 @@
+/**
+ * ESTILOS GLOBAIS
+ * 
+ * Paleta de cores (foco na experiência do turista):
+ * - Azul Profundo (#1A2E35): Textos, ícones, barra superior. Autoridade e confiança.
+ * - Areia Soft (#F9F7F2): Fundo principal. Menos cansativo que branco puro.
+ * - Ocre Sergipano (#D4A373): Botão "Ver Desconto", avaliações. Quente, barro e sol.
+ * - Verde Mangue (#4F6D7A): Filtros e categorias. Natureza local.
+ */
+
+:root {
+  --color-azul: #1A2E35;
+  --color-areia: #F9F7F2;
+  --color-ocre: #D4A373;
+  --color-verde: #4F6D7A;
+  --color-texto: #1A2E35;
+  --color-categoria: #8A8A8A;
+  /* Espaçamento - margens largas, espaço negativo */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --max-width-content: 480px;
+  --max-width-wide: 640px;
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(26, 46, 53, 0.08);
+  --glass-blur: 12px;
+  --card-shadow: 0 2px 16px rgba(26, 46, 53, 0.06);
+  --card-radius: 16px;
+  --image-radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: var(--color-areia);
+  min-height: 100vh;
+}
+
+/* Layout */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header - Azul Profundo */
+.layout-header {
+  background: var(--color-azul);
+  color: white;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.layout-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.layout-nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.layout-nav a:hover {
+  color: var(--color-ocre);
+}
+
+.layout-main {
+  flex: 1;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+/* Footer */
+.layout-footer {
+  background: var(--color-azul);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: var(--space-md);
+}
+
+/* Elemento glass genérico (painéis, modais, etc) */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+}
+
+/* Cartões para estabelecimentos */
+.card {
+  background: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(26, 46, 53, 0.1);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-md);
+}
+
+.card h3 {
+  margin-bottom: var(--space-xs);
+  color: var(--color-azul);
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin-bottom: var(--space-sm);
+}
+
+.card .btn {
+  margin-top: var(--space-xs);
+}
+
+/* Páginas - margens largas, não entulhar */
+.page {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.page--wide {
+  max-width: var(--max-width-wide);
+}
+
+.page h1 {
+  margin-bottom: var(--space-lg);
+  color: var(--color-azul);
+  font-weight: 700;
+}
+
+.page > p {
+  margin-bottom: var(--space-xl);
+  color: var(--color-categoria);
+}
+
+.page .card {
+  margin-bottom: var(--space-xl);
+}
+
+/* ===== CARTÃO DE ESTABELECIMENTO ===== */
+.estabelecimento-card {
+  background: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.estabelecimento-card:hover {
+  box-shadow: 0 8px 30px rgba(26, 46, 53, 0.1);
+}
+
+.estabelecimento-card__imagem {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.estabelecimento-card__imagem-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--image-radius) var(--image-radius) 0 0;
+}
+
+.estabelecimento-card__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: white;
+  border-radius: 4px;
+}
+
+.estabelecimento-card__badge--desconto {
+  background: var(--color-ocre);
+}
+
+.estabelecimento-card__badge--destaque {
+  background: var(--color-verde);
+}
+
+.estabelecimento-card__conteudo {
+  padding: var(--space-md);
+}
+
+.estabelecimento-card__nome {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--color-azul);
+  margin-bottom: var(--space-xs);
+}
+
+.estabelecimento-card__categoria {
+  font-size: 0.75rem;
+  color: var(--color-categoria);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Filtros e categorias - Verde Mangue */
+.filtros-row {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+.filtro, .categoria-tag {
+  background: var(--color-verde);
+  color: white;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Botões */
+.btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: var(--color-azul);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--color-verde);
+  color: white;
+}
+
+.btn-desconto {
+  background: var(--color-ocre);
+  color: white;
+}
+
+.btn-highlight {
+  background: var(--color-ocre);
+  color: white;
+}
