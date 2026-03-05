@@ -17,7 +17,7 @@ Acesse: http://localhost:3000
 src/
 ├── components/       # Componentes reutilizáveis
 │   ├── Layout/       # Estrutura que envolve todas as páginas (header, nav, footer)
-│   └── ui/           # Componentes básicos (Button, Input, etc)
+│   └── ui/           # Componentes (shadcn: button.jsx, card.jsx | custom: Button/, Card/)
 ├── pages/            # Uma pasta = uma tela da aplicação
 ├── hooks/            # Lógica reutilizável (ex: useCounter)
 ├── utils/            # Funções auxiliares (formatação, etc)
@@ -59,6 +59,29 @@ import MinhaPagina from './pages/MinhaPagina'
 
 1. Crie a função em `src/services/api.js`
 2. Use no componente com `useEffect` ou em um evento
+
+### Usar componentes shadcn/ui
+
+O projeto está configurado para usar [shadcn/ui](https://ui.shadcn.com). Para adicionar componentes:
+
+```bash
+npx shadcn@latest add button    # Adiciona o botão
+npx shadcn@latest add card      # Adiciona o card
+npx shadcn@latest add dialog    # Adiciona o modal
+# etc.
+```
+
+Importe e use:
+
+```jsx
+import { Button } from "@/components/ui/button"
+
+<Button variant="default">Clique</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="destructive">Excluir</Button>
+```
+
+Os componentes shadcn ficam em `src/components/ui/` (minúsculo: button.jsx, card.jsx). Os componentes customizados do projeto ficam em pastas com maiúscula (Button/, Card/).
 
 ## 🛠 Scripts
 

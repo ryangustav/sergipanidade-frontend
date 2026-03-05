@@ -10,12 +10,15 @@
  */
 
 import { Link } from 'react-router-dom'
+import logo from '@/assets/favicon.svg'
 
 function Layout({ children }) {
   return (
     <div className="layout">
       <header className="layout-header">
-        <Link to="/" className="logo">Sergipanidade</Link>
+        <Link to="/" className="logo">
+          <img src={logo} alt="Sergipanidade" className="logo-img" />
+        </Link>
         <nav className="layout-nav">
           <Link to="/">Início</Link>
           <Link to="/sobre">Sobre</Link>
